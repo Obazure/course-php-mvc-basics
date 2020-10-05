@@ -1,0 +1,19 @@
+RewriteEngine on
+RewriteBase /
+Options All -Indexes
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^assets/(.*)$ assets/$1 [L]
+RewriteRule ^images/(.*)$ images/$1 [L]
+
+RewriteRule ^cv/(.*)$ cv/$1 [NC,L]
+RewriteRule ^cv/(.*)$ cv/index.php [NC,L]
+
+RewriteRule ^g/(.*) g/$1 [NC,L]
+RewriteRule ^g/(.*)$ g/index.php [NC,L]
+
+RewriteRule ^.*$ index.php [NC,L]
+RewriteRule ^.*$ [NC,L]
+
+#php_value date.timezone "Asia/Almaty"
